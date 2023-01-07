@@ -45,7 +45,7 @@ services:
     restart: always
 
   rabbitmq:
-    image: rabbitmq:3
+    image: rabbitmq:latest
     container_name: rabbitmq
     volumes:
       - ./rabbitmq/etc/rabbitmq:/etc/rabbitmq
