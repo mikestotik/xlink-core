@@ -34,6 +34,12 @@ $ npm run test:cov
 
 ## Using Docker
 ```shell
+# start All
+docker compose up -d
+# stop All
+docker compose stop
+
+
 # start database
 docker compose up -d database
 docker compose up -d rabbitmq
