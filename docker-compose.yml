@@ -1,5 +1,20 @@
 version: "3.2"
 services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    volumes:
+      - ./postgresql/data/:/var/lib/postgresql/data/
+    env_file: ".env"
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASS}
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    hostname: ${DATABASE_HOST}
+    ports:
+      - ${DATABASE_PORT}:${DATABASE_PORT}
+    restart: always
+
   node-red:
     image: nodered/node-red:latest
     container_name: node-red
@@ -28,7 +43,33 @@ services:
       - DOCKER_INFLUXDB_INIT_MODE=setup
       # - DOCKER_INFLUXDB_INIT_MODE=upgrade
     restart: always
-#  tZpYmoTnV30t9TomvB0S7yqvSmzR7H90GMmPLlHZVSKMdT7Ohz7BvtT_K1J4Cj3AYfQQ2y2nbBWCJrnNTcuA1g==
+
+  rabbitmq:
+    image: rabbitmq:3
+    container_name: rabbitmq
+    volumes:
+      - ./rabbitmq/etc/rabbitmq:/etc/rabbitmq
+      - ./rabbitmq/var/lib/rabbitmq/:/var/lib/rabbitmq/
+      - ./rabbitmq/var/log/rabbitmq/:/var/log/rabbitmq
+    environment:
+      - "RABBITMQ_DEFAULT_USER=xlink"
+      - "RABBITMQ_DEFAULT_PASS=xlink"
+      - "RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit disk_free_limit 2147483648"
+    restart: always
+    hostname: localhost
+    ports:
+      - "1883:1883"
+      - "5672:5672"
+      - "15672:15672"
+      - "15675:15675"
+
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    environment:
+#      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+#      - PGADMIN_DEFAULT_PASSWORD=root
+#    ports:
+#      - "8080:80"
 
 #  telegraf:
 #    image: telegraf:latest
@@ -55,7 +96,7 @@ services:
 #      - "9092:9092"
 #    networks:
 #      - tignet
-#
+
 #  chronograf:
 #    image: chronograf:latest
 #    container_name: chronograf
@@ -78,56 +119,16 @@ services:
 #    networks:
 #      - tignet
 
-  grafana:
-    image: grafana/grafana:latest
-    container_name: grafana
-    ports:
-      - "3000:3000"
-    user: "0"
-    links:
-      - influxdb
-    volumes:
-      # sudo mkdir -p /srv/docker/grafana/data; chown 472:472 /srv/docker/grafana/data
-      - ./grafana:/var/lib/grafana
+#  grafana:
+#    image: grafana/grafana:latest
+#    container_name: grafana
+#    ports:
+#      - "3000:3000"
+#    user: "0"
+#    links:
+#      - influxdb
+#    volumes:
+#      # sudo mkdir -p /srv/docker/grafana/data; chown 472:472 /srv/docker/grafana/data
+#      - ./grafana:/var/lib/grafana
 
-  postgres:
-    image: postgres:14
-    container_name: postgres
-    volumes:
-      - ./postgresql/data/:/var/lib/postgresql/data/
-    env_file: ".env"
-    environment:
-      - POSTGRES_USER=${DATABASE_USER}
-      - POSTGRES_PASSWORD=${DATABASE_PASS}
-      - POSTGRES_HOST_AUTH_METHOD=trust
-    hostname: ${DATABASE_HOST}
-    ports:
-      - ${DATABASE_PORT}:${DATABASE_PORT}
-    restart: always
 
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
-      - PGADMIN_DEFAULT_PASSWORD=root
-    ports:
-      - "8080:80"
-
-  rabbitmq:
-    image: rabbitmq:3
-    container_name: rabbitmq
-    volumes:
-      - ./rabbitmq/etc/rabbitmq:/etc/rabbitmq
-      - ./rabbitmq/var/lib/rabbitmq/:/var/lib/rabbitmq/
-      - ./rabbitmq/var/log/rabbitmq/:/var/log/rabbitmq
-    environment:
-      - "RABBITMQ_DEFAULT_USER=xlink"
-      - "RABBITMQ_DEFAULT_PASS=xlink"
-      - "RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit disk_free_limit 2147483648"
-    restart: always
-    hostname: localhost
-    ports:
-      - "1883:1883"
-      - "5672:5672"
-      - "15672:15672"
-      - "15675:15675"
