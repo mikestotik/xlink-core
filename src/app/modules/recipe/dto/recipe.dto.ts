@@ -4,8 +4,8 @@ import { Transform } from 'class-transformer';
 
 
 export class CreateRecipeDTO {
-    title!: string;
-    desc?: string;
+  title!: string;
+  desc?: string;
 }
 
 
@@ -15,9 +15,9 @@ export class UpdateRecipeDTO extends PartialType(CreateRecipeDTO) {
 
 
 export class RecipeDTO {
-    title!: string;
-    desc?: string;
+  title!: string;
+  desc?: string;
 
-    @Transform(({ value }) => value.id)
-    owner!: UserDTO;
+  @Transform(({ value }) => value.id)
+  owner!: UserDTO;
 }

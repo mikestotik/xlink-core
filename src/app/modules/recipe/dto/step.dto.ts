@@ -8,9 +8,10 @@ import { UserDTO } from '../../user/user.dto';
 
 
 export class CreateStepDTO {
+  order!: number;
   title!: string;
   desc?: string;
-  order!: number;
+  type?: StepType;
   timer?: Date;
 
   @Transform(({ value }) => ({ id: value }))

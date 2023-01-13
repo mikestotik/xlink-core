@@ -10,30 +10,30 @@ import { UserEntity } from '../../user/user.entity';
 export class AssetEntity extends BaseEntity implements Asset {
 
   @Column()
-  public title!: string;
+  title!: string;
 
   @Column({ nullable: true })
-  public desc?: string;
+  desc?: string;
 
   @Column({ nullable: true })
-  public icon?: string;
+  icon?: string;
 
   @Column()
-  public link!: string;
+  link!: string;
 
   @Column({ type: 'json' })
-  public meta!: AssetMeta;
+  meta!: AssetMeta;
 
   @Column({ type: 'enum', enum: AssetPermission, default: AssetPermission.Read })
-  public permission!: AssetPermission;
+  permission!: AssetPermission;
 
   @Column({ type: 'enum', enum: DataType, default: DataType.Integer })
-  public type!: DataType;
+  type!: DataType;
 
-  @ManyToOne(() => DeviceEntity, { eager: true })
-  public device!: DeviceEntity;
+  @ManyToOne(() => DeviceEntity, { eager: true, onDelete: 'CASCADE' })
+  device!: DeviceEntity;
 
-  @ManyToOne(() => UserEntity, { eager: true })
-  public owner!: UserEntity;
+  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
+  owner!: UserEntity;
 
 }

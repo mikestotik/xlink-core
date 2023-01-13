@@ -14,11 +14,11 @@ import { UserEntity } from '../../user/user.entity';
 export class ActionEntity extends BaseEntity implements RuleAction {
 
   @Column({ type: 'enum', enum: ActionType })
-  public type!: ActionType;
+  type!: ActionType;
 
   @Column({ type: 'json' })
-  public payload!: NotificationRuleActionPayload | StepRuleActionPayload | AssetRuleActionPayload;
+  payload!: NotificationRuleActionPayload | StepRuleActionPayload | AssetRuleActionPayload;
 
-  @ManyToOne(() => UserEntity, { eager: true })
+  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
   owner!: UserEntity;
 }

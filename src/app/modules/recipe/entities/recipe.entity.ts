@@ -8,11 +8,12 @@ import { UserEntity } from '../../user/user.entity';
 export class RecipeEntity extends BaseEntity implements Recipe {
 
   @Column()
-  public title!: string;
+  title!: string;
 
   @Column({ nullable: true })
-  public desc?: string;
+  desc?: string;
 
-  @ManyToOne(() => UserEntity, { eager: true })
+  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
   owner!: UserEntity;
+
 }

@@ -2,35 +2,35 @@ import { Column, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../../../database/entity.class';
 import { StepStatus, StepType } from '../../../enums/step.enum';
 import { Step } from '../../../interfaces/recipe.interface';
-import { RecipeEntity } from './recipe.entity';
 import { UserEntity } from '../../user/user.entity';
+import { RecipeEntity } from './recipe.entity';
 
 
 @Entity('steps')
 export class StepEntity extends BaseEntity implements Step {
 
   @Column()
-  public title!: string;
+  title!: string;
 
   @Column({ nullable: true })
-  public desc?: string;
+  desc?: string;
 
   @Column()
-  public order!: number;
+  order!: number;
 
   @Column({ type: 'enum', enum: StepStatus, default: StepStatus.Disabled })
-  public status!: StepStatus;
+  status!: StepStatus;
 
-  @Column({ type: 'timestamptz' })
-  public timer?: Date;
+  @Column({ type: 'timestamptz', nullable: true })
+  timer?: Date;
 
   @Column({ type: 'enum', enum: StepType, default: StepType.Regular })
-  public type!: StepType;
+  type!: StepType;
 
-  @ManyToOne(() => UserEntity, { eager: true })
+  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
   owner!: UserEntity;
 
-  @ManyToOne(() => RecipeEntity, { eager: true })
+  @ManyToOne(() => RecipeEntity, { eager: true, onDelete: 'CASCADE' })
   recipe!: RecipeEntity;
 
 }

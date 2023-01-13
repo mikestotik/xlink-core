@@ -16,8 +16,8 @@ export interface Recipe {
 export interface Step {
   title: string;
   desc?: string;
-  order: number;
   timer?: Date;
+  order: number;
   status: StepStatus;
   type: StepType;
   // rules
