@@ -9,7 +9,6 @@ import { Asset } from './asset.interface';
 export interface Recipe {
   title: string;
   desc?: string;
-  // steps
 }
 
 
@@ -20,7 +19,7 @@ export interface Step {
   order: number;
   status: StepStatus;
   type: StepType;
-  // rules
+  disabled?: boolean;
 }
 
 

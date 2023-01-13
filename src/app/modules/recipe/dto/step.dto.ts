@@ -20,7 +20,7 @@ export class CreateStepDTO {
 
 
 export class UpdateStepDTO extends PartialType(CreateStepDTO) {
-
+  disabled?: boolean;
 }
 
 
@@ -31,6 +31,7 @@ export class StepDTO extends BaseEntityDTO implements Step {
   status!: StepStatus;
   timer?: Date;
   type!: StepType;
+  disabled?: boolean;
 
   @Transform(({ value }) => value.id)
   recipe!: RecipeDTO;
