@@ -2,7 +2,7 @@ import { Column, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../../../database/entity.class';
 import { StepStatus, StepType } from '../../../enums/step.enum';
 import { Step } from '../../../interfaces/recipe.interface';
-import { RecipeEntity } from '../../recipe/entities/recipe.entity';
+import { RecipeEntity } from './recipe.entity';
 import { UserEntity } from '../../user/user.entity';
 
 

@@ -3,7 +3,7 @@ import { Transform } from 'class-transformer';
 import { BaseEntityDTO } from '../../../database/entity.class';
 import { StepStatus, StepType } from '../../../enums/step.enum';
 import { Step } from '../../../interfaces/recipe.interface';
-import { RecipeDTO } from '../../recipe/dto/recipe.dto';
+import { RecipeDTO } from './recipe.dto';
 import { UserDTO } from '../../user/user.dto';
 
 

@@ -16,7 +16,6 @@ import { HealthModule } from './modules/health/health.module';
 import { RecipeModule } from './modules/recipe/recipe.module';
 import { RoleModule } from './modules/role/role.module';
 import { RuleModule } from './modules/rule/rule.module';
-import { StepModule } from './modules/step/step.module';
 import { UserModule } from './modules/user/user.module';
 import { WidgetModule } from './modules/widget/widget.module';
 
@@ -40,7 +39,6 @@ import { WidgetModule } from './modules/widget/widget.module';
     ConfirmModule,
     DeviceModule,
     WidgetModule,
-    StepModule,
     RuleModule,
     RecipeModule,
     ActionModule,

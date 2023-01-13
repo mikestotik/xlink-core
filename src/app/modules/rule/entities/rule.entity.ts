@@ -2,7 +2,7 @@ import { Column, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../../../database/entity.class';
 import { RuleType } from '../../../enums/rule.enum';
 import { AssetRuleCondition, Rule, TimeRuleCondition } from '../../../interfaces/recipe.interface';
-import { StepEntity } from '../../step/entities/step.entity';
+import { StepEntity } from '../../recipe/entities/step.entity';
 import { UserEntity } from '../../user/user.entity';
 
 
