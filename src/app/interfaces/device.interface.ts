@@ -1,5 +1,6 @@
 export interface Device {
-  deviceId: string;
+  uuid: string;
   title: string;
   desc?: string;
+  icon?: string;
 }

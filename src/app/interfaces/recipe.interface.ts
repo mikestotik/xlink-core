@@ -16,6 +16,7 @@ export interface Recipe {
 export interface Step {
   title: string;
   desc?: string;
+  order: number;
   timer?: Date;
   status: StepStatus;
   type: StepType;

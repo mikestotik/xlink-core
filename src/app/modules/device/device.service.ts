@@ -16,8 +16,8 @@ export class DeviceService {
 
 
   public async create(dto: CreateDeviceDTO, ownerId: number): Promise<DeviceEntity> {
-    if (await this.isExists(dto.deviceId)) {
-      throw new BadRequestException(`Entity with MAC: ${ dto.deviceId } exists.`);
+    if (await this.isExists(dto.uuid)) {
+      throw new BadRequestException(`Entity with UUID: ${ dto.uuid } exists.`);
     }
     return this.deviceRepository.save(
       plainToInstance(DeviceEntity, { ...dto, owner: { id: ownerId } })
@@ -57,6 +57,6 @@ export class DeviceService {
 
 
   public isExists(mac: string): Promise<boolean> {
-    return this.deviceRepository.exist({ where: { deviceId: mac } });
+    return this.deviceRepository.exist({ where: { uuid: mac } });
   }
 }

@@ -15,6 +15,9 @@ export class StepEntity extends BaseEntity implements Step {
   @Column({ nullable: true })
   public desc?: string;
 
+  @Column()
+  public order!: number;
+
   @Column({ type: 'enum', enum: StepStatus, default: StepStatus.Disabled })
   public status!: StepStatus;
 

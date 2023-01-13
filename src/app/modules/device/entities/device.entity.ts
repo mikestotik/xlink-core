@@ -8,13 +8,16 @@ import { UserEntity } from '../../user/user.entity';
 export class DeviceEntity extends BaseEntity implements Device {
 
   @Column()
-  public deviceId!: string;
+  public uuid!: string;
 
   @Column()
   public title!: string;
 
   @Column({ nullable: true })
   public desc?: string;
+
+  @Column({ nullable: true })
+  public icon?: string;
 
   @ManyToOne(() => UserEntity, { eager: true })
   public owner?: UserEntity;

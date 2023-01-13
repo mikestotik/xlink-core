@@ -6,9 +6,10 @@ import { UserDTO } from '../../user/user.dto';
 
 
 export class CreateDeviceDTO implements Device {
-  deviceId!: string;
+  uuid!: string;
   title!: string;
   desc?: string;
+  icon?: string;
 }
 
 
@@ -18,9 +19,10 @@ export class UpdateDeviceDTO extends PartialType(CreateDeviceDTO) {
 
 
 export class DeviceDTO extends BaseEntityDTO implements Device {
+  uuid!: string;
   title!: string;
-  deviceId!: string;
   desc!: string;
+  icon?: string;
 
   @Transform(({ value }) => value.id)
   owner!: UserDTO;

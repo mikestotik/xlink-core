@@ -1,8 +1,8 @@
 export enum DataType {
   Integer,
   Double,
-  String,
-  Boolean
+  Boolean,
+  Text,
 }
 
 
