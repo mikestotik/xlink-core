@@ -3,8 +3,8 @@ import { plainToInstance } from 'class-transformer';
 import { TokenPayload } from '../../../decor/token.decorator';
 import { JwtPayload } from '../../../interfaces/auth.interface';
 import { AccessTokenGuard } from '../../auth/auth.guard';
-import { CreateStepDTO, StepDTO, UpdateStepDTO } from '../dto/step.dto';
-import { StepService } from '../services/step.service';
+import { CreateStepDTO, StepDTO, UpdateStepDTO } from '../dto/recipe-step.dto';
+import { StepService } from '../services/recipe-step.service';
 
 
 @UseGuards(AccessTokenGuard)

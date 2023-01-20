@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { StepController } from './controllers/step.controller';
+import { StepController } from './controllers/recipe-step.controller';
 import { RecipeEntity } from './entities/recipe.entity';
 import { RecipeController } from './controllers/recipe.controller';
-import { StepEntity } from './entities/step.entity';
+import { StepEntity } from './entities/recipe-step.entity';
 import { RecipeService } from './services/recipe.service';
-import { StepService } from './services/step.service';
+import { StepService } from './services/recipe-step.service';
 
 
 const OrmModule = TypeOrmModule.forFeature([ RecipeEntity, StepEntity ]);

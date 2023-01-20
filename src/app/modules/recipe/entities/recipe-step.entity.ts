@@ -22,6 +22,9 @@ export class StepEntity extends BaseEntity implements Step {
   status!: StepStatus;
 
   @Column({ type: 'timestamptz', nullable: true })
+  startTimer?: Date;
+
+  @Column({ type: 'timestamptz', nullable: true })
   timer?: Date;
 
   @Column({ type: 'enum', enum: StepType, default: StepType.Regular })
