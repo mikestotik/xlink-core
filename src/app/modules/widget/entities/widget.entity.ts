@@ -2,7 +2,7 @@ import { Column, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../../../database/entity.class';
 import { WidgetSize, WidgetType } from '../../../enums/widget.enum';
 import { Widget } from '../../../interfaces/widget.interface';
-import { UserEntity } from '../../user/user.entity';
+import { UserEntity } from '../../core/user/user.entity';
 
 
 @Entity('widgets')

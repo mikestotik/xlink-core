@@ -4,19 +4,20 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfiguration } from './config/database.config';
-import { AccountModule } from './modules/account/account.module';
-import { ActionModule } from './modules/action/action.module';
-import { AssetModule } from './modules/asset/asset.module';
-import { AuthModule } from './modules/auth/auth.module';
-import { RolesGuard } from './modules/auth/guards/roles.guard';
-import { ConfirmModule } from './modules/confirm/confirm.module';
-import { DeviceModule } from './modules/device/device.module';
+import { AccountModule } from './modules/core/account/account.module';
+import { ActionModule } from './modules/rule-engine/action/action.module';
+import { AssetModule } from './modules/asset-manager/asset/asset.module';
+import { AuthModule } from './modules/core/auth/auth.module';
+import { RolesGuard } from './modules/core/auth/guards/roles.guard';
+import { ConfirmModule } from './modules/core/confirm/confirm.module';
+import { DeviceModule } from './modules/asset-manager/device/device.module';
 import { EventModule } from './modules/event/event.module';
-import { HealthModule } from './modules/health/health.module';
-import { RecipeModule } from './modules/recipe/recipe.module';
-import { RoleModule } from './modules/role/role.module';
-import { RuleModule } from './modules/rule/rule.module';
-import { UserModule } from './modules/user/user.module';
+import { HealthModule } from './modules/core/health/health.module';
+import { RecipeModule } from './modules/rule-engine/recipe/recipe.module';
+import { RoleModule } from './modules/core/role/role.module';
+import { RuleModule } from './modules/rule-engine/rule/rule.module';
+import { UserModule } from './modules/core/user/user.module';
+import { StepModule } from './modules/rule-engine/step/step.module';
 import { WidgetModule } from './modules/widget/widget.module';
 
 
@@ -43,6 +44,7 @@ import { WidgetModule } from './modules/widget/widget.module';
     RecipeModule,
     ActionModule,
     AssetModule,
+    StepModule
   ],
   providers: [
     {
