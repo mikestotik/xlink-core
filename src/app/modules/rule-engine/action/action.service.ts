@@ -2,8 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { plainToInstance } from 'class-transformer';
 import { Repository } from 'typeorm';
-import { CreateActionDTO, UpdateActionDTO } from './dto/action.dto';
-import { ActionEntity } from './entities/action.entity';
+import { CreateActionDTO, UpdateActionDTO } from './action.dto';
+import { ActionEntity } from './action.entity';
 
 
 @Injectable()

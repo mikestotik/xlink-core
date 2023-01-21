@@ -1,18 +1,20 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { Transform } from 'class-transformer';
-import { BaseEntityDTO } from '../../../../database/entity.class';
-import { StepStatus, StepType } from '../../../../enums/step.enum';
-import { Step } from '../../../../interfaces/recipe.interface';
-import { RecipeDTO } from '../../recipe/dto/recipe.dto';
-import { UserDTO } from '../../../core/user/user.dto';
+import { BaseEntityDTO } from '../../../database/entity.class';
+import { StepStatus, StepType } from '../../../enums/step.enum';
+import { Step } from '../../../interfaces/recipe.interface';
+import { RecipeDTO } from '../recipe/recipe.dto';
+import { UserDTO } from '../../core/user/user.dto';
 
 
 export class CreateStepDTO {
-  order!: number;
   title!: string;
   desc?: string;
+  order!: number;
   type?: StepType;
+  delay?: Date;
   timer?: Date;
+  loop?: boolean;
 
   @Transform(({ value }) => ({ id: value }))
   recipe!: RecipeDTO;

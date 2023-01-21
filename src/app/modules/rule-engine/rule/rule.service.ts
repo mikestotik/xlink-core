@@ -2,8 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { plainToInstance } from 'class-transformer';
 import { Repository } from 'typeorm';
-import { CreateRuleDTO, UpdateRuleDTO } from './dto/rule.dto';
-import { RuleEntity } from './entities/rule.entity';
+import { CreateRuleDTO, UpdateRuleDTO } from './rule.dto';
+import { RuleEntity } from './rule.entity';
 
 
 @Injectable()

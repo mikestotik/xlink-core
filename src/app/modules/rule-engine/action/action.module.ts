@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ActionController } from './action.controller';
 import { ActionService } from './action.service';
-import { ActionEntity } from './entities/action.entity';
+import { ActionEntity } from './action.entity';
 
 
 const OrmModule = TypeOrmModule.forFeature([ ActionEntity ]);

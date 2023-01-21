@@ -1,9 +1,9 @@
 import { Column, Entity, ManyToOne } from 'typeorm';
-import { BaseEntity } from '../../../../database/entity.class';
-import { RuleType } from '../../../../enums/rule.enum';
-import { AssetRuleCondition, Rule, TimeRuleCondition } from '../../../../interfaces/recipe.interface';
-import { StepEntity } from '../../step/entities/step.entity';
-import { UserEntity } from '../../../core/user/user.entity';
+import { BaseEntity } from '../../../database/entity.class';
+import { RuleType } from '../../../enums/rule.enum';
+import { AssetRuleCondition, Rule, TimeRuleCondition } from '../../../interfaces/recipe.interface';
+import { StepEntity } from '../step/step.entity';
+import { UserEntity } from '../../core/user/user.entity';
 
 
 @Entity('rules')

@@ -3,7 +3,7 @@ import { plainToInstance } from 'class-transformer';
 import { TokenPayload } from '../../../decor/token.decorator';
 import { JwtPayload } from '../../../interfaces/auth.interface';
 import { AccessTokenGuard } from '../../core/auth/auth.guard';
-import { CreateRuleDTO, RuleDTO, UpdateRuleDTO } from './dto/rule.dto';
+import { CreateRuleDTO, RuleDTO, UpdateRuleDTO } from './rule.dto';
 import { RuleService } from './rule.service';
 
 

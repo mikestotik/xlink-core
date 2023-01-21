@@ -4,7 +4,7 @@ import { TokenPayload } from '../../../decor/token.decorator';
 import { JwtPayload } from '../../../interfaces/auth.interface';
 import { AccessTokenGuard } from '../../core/auth/auth.guard';
 import { ActionService } from './action.service';
-import { ActionDTO, CreateActionDTO, UpdateActionDTO } from './dto/action.dto';
+import { ActionDTO, CreateActionDTO, UpdateActionDTO } from './action.dto';
 
 
 @UseGuards(AccessTokenGuard)

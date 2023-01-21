@@ -1,9 +1,9 @@
 import { Column, Entity, ManyToOne } from 'typeorm';
-import { BaseEntity } from '../../../../database/entity.class';
-import { StepStatus, StepType } from '../../../../enums/step.enum';
-import { Step } from '../../../../interfaces/recipe.interface';
-import { UserEntity } from '../../../core/user/user.entity';
-import { RecipeEntity } from '../../recipe/entities/recipe.entity';
+import { BaseEntity } from '../../../database/entity.class';
+import { StepStatus, StepType } from '../../../enums/step.enum';
+import { Step } from '../../../interfaces/recipe.interface';
+import { UserEntity } from '../../core/user/user.entity';
+import { RecipeEntity } from '../recipe/recipe.entity';
 
 
 @Entity('steps')

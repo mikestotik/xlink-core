@@ -1,13 +1,13 @@
 import { Column, Entity, ManyToOne } from 'typeorm';
-import { BaseEntity } from '../../../../database/entity.class';
-import { ActionType } from '../../../../enums/rule.enum';
+import { BaseEntity } from '../../../database/entity.class';
+import { ActionType } from '../../../enums/rule.enum';
 import {
   AssetRuleActionPayload,
   NotificationRuleActionPayload,
   RuleAction,
   StepRuleActionPayload
-} from '../../../../interfaces/recipe.interface';
-import { UserEntity } from '../../../core/user/user.entity';
+} from '../../../interfaces/recipe.interface';
+import { UserEntity } from '../../core/user/user.entity';
 
 
 @Entity('actions')
