@@ -13,9 +13,11 @@ export abstract class BaseEntity {
   updated!: Date;
 }
 
-
-export class BaseEntityDTO {
+export class SchemaEntityDTO {
   id!: number;
+}
+
+export class BaseEntityDTO extends SchemaEntityDTO {
   created!: Date;
   updated!: Date;
 }

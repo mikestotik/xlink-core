@@ -17,6 +17,7 @@ import { EventModule } from './modules/event/event.module';
 import { RecipeModule } from './modules/rule-engine/recipe/recipe.module';
 import { RuleModule } from './modules/rule-engine/rule/rule.module';
 import { StepModule } from './modules/rule-engine/step/step.module';
+import { TriggerModule } from './modules/rule-engine/trigger/trigger.module';
 import { WidgetModule } from './modules/widget/widget.module';
 
 
@@ -37,12 +38,13 @@ import { WidgetModule } from './modules/widget/widget.module';
     RoleModule,
     AccountModule,
     ConfirmModule,
-    DeviceModule,
     WidgetModule,
-    RuleModule,
-    RecipeModule,
+    DeviceModule,
     AssetModule,
-    StepModule
+    RecipeModule,
+    StepModule,
+    RuleModule,
+    TriggerModule
   ],
   providers: [
     {
