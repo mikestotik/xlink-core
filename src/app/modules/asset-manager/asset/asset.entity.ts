@@ -1,9 +1,9 @@
 import { Column, Entity, ManyToOne } from 'typeorm';
-import { BaseEntity } from '../../../../database/entity.class';
-import { AssetPermission, DataType } from '../../../../enums/asset.enum';
-import { Asset, AssetMeta } from '../../../../interfaces/asset.interface';
-import { DeviceEntity } from '../../device/entities/device.entity';
-import { UserEntity } from '../../../core/user/user.entity';
+import { BaseEntity } from '../../../database/entity.class';
+import { AssetPermission, DataType } from '../../../enums/asset.enum';
+import { Asset, AssetMeta } from '../../../interfaces/asset.interface';
+import { DeviceEntity } from '../device/device.entity';
+import { UserEntity } from '../../core/user/user.entity';
 
 
 @Entity('assets')

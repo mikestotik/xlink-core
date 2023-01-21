@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DeviceController } from './controllers/device.controller';
+import { DeviceController } from './device.controller';
 import { DeviceService } from './device.service';
-import { DeviceEntity } from './entities/device.entity';
+import { DeviceEntity } from './device.entity';
 
 
 const OrmModule = TypeOrmModule.forFeature([DeviceEntity]);

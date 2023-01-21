@@ -2,8 +2,8 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { InjectRepository } from '@nestjs/typeorm';
 import { plainToInstance } from 'class-transformer';
 import { Repository } from 'typeorm';
-import { CreateDeviceDTO, UpdateDeviceDTO } from './dto/device.dto';
-import { DeviceEntity } from './entities/device.entity';
+import { CreateDeviceDTO, UpdateDeviceDTO } from './device.dto';
+import { DeviceEntity } from './device.entity';
 
 
 @Injectable()

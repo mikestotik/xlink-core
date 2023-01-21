@@ -2,8 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { plainToInstance } from 'class-transformer';
 import { Repository } from 'typeorm';
-import { CreateAssetDTO, UpdateAssetDTO } from './dto/asset.dto';
-import { AssetEntity } from './entities/asset.entity';
+import { CreateAssetDTO, UpdateAssetDTO } from './asset.dto';
+import { AssetEntity } from './asset.entity';
 
 @Injectable()
 export class AssetService {

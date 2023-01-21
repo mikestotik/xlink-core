@@ -1,9 +1,9 @@
 import { CanActivate, ExecutionContext, ForbiddenException, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { ROLES_KEY } from '../../../../decor/roles.decorator';
-import { Role } from '../../../../enums/role.enum';
-import { parseBearer } from '../../../../utils/common.utils';
-import { JwtPayload } from '../../../../interfaces/auth.interface';
+import { ROLES_KEY } from '../../../decor/roles.decorator';
+import { Role } from '../../../enums/role.enum';
+import { parseBearer } from '../../../utils/common.utils';
+import { JwtPayload } from '../../../interfaces/auth.interface';
 
 
 @Injectable()

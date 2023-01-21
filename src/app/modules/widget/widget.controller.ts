@@ -3,7 +3,7 @@ import { plainToInstance } from 'class-transformer';
 import { TokenPayload } from '../../decor/token.decorator';
 import { JwtPayload } from '../../interfaces/auth.interface';
 import { AccessTokenGuard } from '../core/auth/auth.guard';
-import { CreateWidgetDTO, UpdateWidgetDTO, WidgetDTO } from './dto/widget.dto';
+import { CreateWidgetDTO, UpdateWidgetDTO, WidgetDTO } from './widget.dto';
 import { WidgetService } from './widget.service';
 
 

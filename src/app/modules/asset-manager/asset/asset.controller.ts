@@ -13,7 +13,7 @@ import { TokenPayload } from '../../../decor/token.decorator';
 import { JwtPayload } from '../../../interfaces/auth.interface';
 import { AccessTokenGuard } from '../../core/auth/auth.guard';
 import { AssetService } from './asset.service';
-import { AssetDTO, CreateAssetDTO, UpdateAssetDTO } from './dto/asset.dto';
+import { AssetDTO, CreateAssetDTO, UpdateAssetDTO } from './asset.dto';
 
 @UseGuards(AccessTokenGuard)
 @Controller('asset')

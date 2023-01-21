@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToOne } from 'typeorm';
-import { BaseEntity } from '../../../../database/entity.class';
-import { Device } from '../../../../interfaces/device.interface';
-import { UserEntity } from '../../../core/user/user.entity';
+import { BaseEntity } from '../../../database/entity.class';
+import { Device } from '../../../interfaces/device.interface';
+import { UserEntity } from '../../core/user/user.entity';
 
 
 @Entity('devices')

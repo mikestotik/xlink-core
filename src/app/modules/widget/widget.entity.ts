@@ -1,8 +1,8 @@
 import { Column, Entity, ManyToOne } from 'typeorm';
-import { BaseEntity } from '../../../database/entity.class';
-import { WidgetSize, WidgetType } from '../../../enums/widget.enum';
-import { Widget } from '../../../interfaces/widget.interface';
-import { UserEntity } from '../../core/user/user.entity';
+import { BaseEntity } from '../../database/entity.class';
+import { WidgetSize, WidgetType } from '../../enums/widget.enum';
+import { Widget } from '../../interfaces/widget.interface';
+import { UserEntity } from '../core/user/user.entity';
 
 
 @Entity('widgets')
@@ -19,6 +19,4 @@ export class WidgetEntity extends BaseEntity implements Widget {
 
   @ManyToOne(() => UserEntity, { eager: true })
   owner!: UserEntity;
-
-  // TODO: - Asset
 }

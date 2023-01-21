@@ -8,7 +8,7 @@ import { AccountModule } from './modules/core/account/account.module';
 import { ActionModule } from './modules/rule-engine/action/action.module';
 import { AssetModule } from './modules/asset-manager/asset/asset.module';
 import { AuthModule } from './modules/core/auth/auth.module';
-import { RolesGuard } from './modules/core/auth/guards/roles.guard';
+import { RolesGuard } from './modules/core/role/roles.guard';
 import { ConfirmModule } from './modules/core/confirm/confirm.module';
 import { DeviceModule } from './modules/asset-manager/device/device.module';
 import { EventModule } from './modules/event/event.module';

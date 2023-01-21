@@ -1,8 +1,8 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { Transform } from 'class-transformer';
-import { BaseEntityDTO } from '../../../../database/entity.class';
-import { Device } from '../../../../interfaces/device.interface';
-import { UserDTO } from '../../../core/user/user.dto';
+import { BaseEntityDTO } from '../../../database/entity.class';
+import { Device } from '../../../interfaces/device.interface';
+import { UserDTO } from '../../core/user/user.dto';
 
 
 export class CreateDeviceDTO implements Device {

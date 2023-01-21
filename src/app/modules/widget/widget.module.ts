@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { WidgetEntity } from './entities/widget.entity';
+import { WidgetEntity } from './widget.entity';
 import { WidgetController } from './widget.controller';
 import { WidgetService } from './widget.service';
 

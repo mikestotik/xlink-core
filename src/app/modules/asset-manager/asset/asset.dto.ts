@@ -1,10 +1,10 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { Transform } from 'class-transformer';
-import { BaseEntityDTO } from '../../../../database/entity.class';
-import { AssetPermission, DataType } from '../../../../enums/asset.enum';
-import { Asset, AssetMeta } from '../../../../interfaces/asset.interface';
-import { DeviceEntity } from '../../device/entities/device.entity';
-import { UserEntity } from '../../../core/user/user.entity';
+import { BaseEntityDTO } from '../../../database/entity.class';
+import { AssetPermission, DataType } from '../../../enums/asset.enum';
+import { Asset, AssetMeta } from '../../../interfaces/asset.interface';
+import { DeviceEntity } from '../device/device.entity';
+import { UserEntity } from '../../core/user/user.entity';
 
 
 export class CreateAssetDTO implements Asset {

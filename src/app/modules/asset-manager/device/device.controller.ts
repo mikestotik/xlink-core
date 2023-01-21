@@ -1,10 +1,10 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { plainToInstance } from 'class-transformer';
-import { TokenPayload } from '../../../../decor/token.decorator';
-import { JwtPayload } from '../../../../interfaces/auth.interface';
-import { AccessTokenGuard } from '../../../core/auth/auth.guard';
-import { DeviceService } from '../device.service';
-import { CreateDeviceDTO, DeviceDTO, UpdateDeviceDTO } from '../dto/device.dto';
+import { TokenPayload } from '../../../decor/token.decorator';
+import { JwtPayload } from '../../../interfaces/auth.interface';
+import { AccessTokenGuard } from '../../core/auth/auth.guard';
+import { DeviceService } from './device.service';
+import { CreateDeviceDTO, DeviceDTO, UpdateDeviceDTO } from './device.dto';
 
 
 @UseGuards(AccessTokenGuard)
