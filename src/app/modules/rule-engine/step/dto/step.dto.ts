@@ -29,8 +29,9 @@ export class StepDTO extends BaseEntityDTO implements Step {
   desc?: string;
   order!: number;
   status!: StepStatus;
-  startTimer?: Date;
+  delay?: Date;
   timer?: Date;
+  loop?: boolean;
   type!: StepType;
   disabled?: boolean;
 

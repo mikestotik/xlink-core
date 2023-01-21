@@ -15,11 +15,12 @@ export interface Recipe {
 export interface Step {
   title: string;
   desc?: string;
-  startTimer?: Date;
-  timer?: Date;
   order: number;
-  status: StepStatus;
+  delay?: Date;
+  timer?: Date;
+  loop?: boolean;
   type: StepType;
+  status: StepStatus;
   disabled?: boolean;
 }
 

@@ -18,25 +18,27 @@ export class StepEntity extends BaseEntity implements Step {
   @Column()
   order!: number;
 
-  @Column({ type: 'enum', enum: StepStatus, default: StepStatus.Stopped })
-  status!: StepStatus;
-
   @Column({ type: 'timestamptz', nullable: true })
-  startTimer?: Date;
+  delay!: Date;
 
   @Column({ type: 'timestamptz', nullable: true })
   timer?: Date;
 
+  @Column({ nullable: true })
+  loop?: boolean;
+
   @Column({ type: 'enum', enum: StepType, default: StepType.Regular })
   type!: StepType;
+
+  @Column({ type: 'enum', enum: StepStatus, default: StepStatus.Stopped })
+  status!: StepStatus;
 
   @Column({ nullable: true })
   disabled?: boolean;
 
-  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
-  owner!: UserEntity;
-
   @ManyToOne(() => RecipeEntity, { eager: true, onDelete: 'CASCADE' })
   recipe!: RecipeEntity;
 
+  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
+  owner!: UserEntity;
 }
