@@ -29,7 +29,8 @@
     "migration:gen": "npm run typeorm -- migration:generate",
     "migration:run": "npm run typeorm -- migration:run",
     "migration:revert": "npm run typeorm -- migration:revert",
-    "gen:res": "cd src/app/modules/ && nest g res --"
+    "gen:res": "cd src/app/modules/ && nest g res --",
+    "rpls": "./node_modules/rpls/bin/cli.js"
   },
   "dependencies": {
     "@nestjs/axios": "^1.0.1",
