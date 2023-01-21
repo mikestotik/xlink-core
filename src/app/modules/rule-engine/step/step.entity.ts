@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../../../database/entity.class';
 import { StepStatus, StepType } from '../../../enums/step.enum';
-import { Step } from '../../../interfaces/recipe.interface';
+import { Step } from '../../../interfaces/step.interface';
 import { UserEntity } from '../../core/user/user.entity';
 import { RecipeEntity } from '../recipe/recipe.entity';
 

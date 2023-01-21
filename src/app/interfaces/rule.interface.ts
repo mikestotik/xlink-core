@@ -1,4 +1,4 @@
-export interface Recipe {
+export interface Rule {
   title: string;
   desc?: string;
 }

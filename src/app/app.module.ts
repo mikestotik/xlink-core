@@ -4,19 +4,18 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfiguration } from './config/database.config';
-import { AccountModule } from './modules/core/account/account.module';
-import { ActionModule } from './modules/rule-engine/action/action.module';
 import { AssetModule } from './modules/asset-manager/asset/asset.module';
-import { AuthModule } from './modules/core/auth/auth.module';
-import { RolesGuard } from './modules/core/role/roles.guard';
-import { ConfirmModule } from './modules/core/confirm/confirm.module';
 import { DeviceModule } from './modules/asset-manager/device/device.module';
-import { EventModule } from './modules/event/event.module';
+import { AccountModule } from './modules/core/account/account.module';
+import { AuthModule } from './modules/core/auth/auth.module';
+import { ConfirmModule } from './modules/core/confirm/confirm.module';
 import { HealthModule } from './modules/core/health/health.module';
-import { RecipeModule } from './modules/rule-engine/recipe/recipe.module';
 import { RoleModule } from './modules/core/role/role.module';
-import { RuleModule } from './modules/rule-engine/rule/rule.module';
+import { RolesGuard } from './modules/core/role/roles.guard';
 import { UserModule } from './modules/core/user/user.module';
+import { EventModule } from './modules/event/event.module';
+import { RecipeModule } from './modules/rule-engine/recipe/recipe.module';
+import { RuleModule } from './modules/rule-engine/rule/rule.module';
 import { StepModule } from './modules/rule-engine/step/step.module';
 import { WidgetModule } from './modules/widget/widget.module';
 
@@ -24,7 +23,7 @@ import { WidgetModule } from './modules/widget/widget.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env'],
+      envFilePath: [ '.env' ],
       isGlobal: true
     }),
     TypeOrmModule.forRootAsync({
@@ -42,7 +41,6 @@ import { WidgetModule } from './modules/widget/widget.module';
     WidgetModule,
     RuleModule,
     RecipeModule,
-    ActionModule,
     AssetModule,
     StepModule
   ],
