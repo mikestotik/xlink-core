@@ -14,7 +14,7 @@ export class RuleEntity extends BaseEntity implements Rule {
   @Column({ nullable: true })
   desc?: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, default: true })
   disabled?: boolean;
 
   @ManyToOne(() => StepEntity, { eager: true })

@@ -12,8 +12,14 @@ const OrmModule = TypeOrmModule.forFeature([ AssetEntity ]);
   imports: [
     OrmModule
   ],
-  controllers: [ AssetController ],
-  providers: [ AssetService ],
-  exports: [ AssetService ]
+  controllers: [
+    AssetController
+  ],
+  providers: [
+    AssetService
+  ],
+  exports: [
+    OrmModule
+  ]
 })
 export class AssetModule {}

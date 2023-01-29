@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { plainToInstance } from 'class-transformer';
 import { Repository } from 'typeorm';
+import { AssetEntity } from '../../asset-manager/asset/asset.entity';
 import { CreateTriggerDTO, UpdateTriggerDTO } from './trigger.dto';
 import { TriggerEntity } from './trigger.entity';
 
@@ -38,12 +39,38 @@ export class TriggerService {
 
 
   public async update(id: number, dto: UpdateTriggerDTO): Promise<TriggerEntity> {
-    return this.repository.update(id, dto)
+    return this.repository.update(id, {
+      triggered: dto.triggered,
+      title: dto.title,
+      desc: dto.desc,
+      chain: dto.chain,
+      recoveryTime: dto.recoveryTime,
+      recoveryTrigger: dto.recoveryTrigger,
+      conditions: dto.conditions,
+    })
       .then(() => this.findOne(id));
   }
 
 
   public async remove(id: number): Promise<void> {
     await this.repository.delete(id);
+  }
+
+
+  public async addAsset(id: number, assetId: number): Promise<TriggerEntity> {
+    const entity = await this.findOne(id);
+    entity.addAsset({ id: assetId } as AssetEntity);
+
+    return this.repository.save(entity)
+      .then(() => this.findOne(id));
+  }
+
+
+  public async removeAsset(id: number, assetId: number): Promise<TriggerEntity> {
+    const entity = await this.findOne(id);
+    entity.removeAsset(assetId);
+
+    return this.repository.save(entity)
+      .then(() => this.findOne(id));
   }
 }

@@ -48,4 +48,18 @@ export class TriggerController {
   public remove(@Param('id') id: number): Promise<void> {
     return this.triggerService.remove(id);
   }
+
+
+  @Post(':id/assets/:assetId')
+  public addAsset(@Param('id') id: string, @Param('assetId') assetId: string): Promise<TriggerDTO> {
+    return this.triggerService.addAsset(+id, +assetId)
+      .then(value => plainToInstance(TriggerDTO, value));
+  }
+
+
+  @Delete(':id/assets/:assetId')
+  public removeAsset(@Param('id') id: string, @Param('assetId') assetId: string): Promise<TriggerDTO> {
+    return this.triggerService.removeAsset(+id, +assetId)
+      .then(value => plainToInstance(TriggerDTO, value));
+  }
 }

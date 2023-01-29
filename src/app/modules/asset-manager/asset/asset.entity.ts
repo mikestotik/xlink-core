@@ -2,8 +2,8 @@ import { Column, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../../../database/entity.class';
 import { AssetPermission, DataType } from '../../../enums/asset.enum';
 import { Asset, AssetMeta } from '../../../interfaces/asset.interface';
-import { DeviceEntity } from '../device/device.entity';
 import { UserEntity } from '../../core/user/user.entity';
+import { DeviceEntity } from '../device/device.entity';
 
 
 @Entity('assets')
@@ -35,5 +35,12 @@ export class AssetEntity extends BaseEntity implements Asset {
 
   @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
   owner!: UserEntity;
+
+  // @ManyToMany(() => TriggerEntity, trigger => trigger.assets, {
+  //   // cascade: true,
+  //   // onDelete: 'CASCADE',
+  //   // onUpdate: 'CASCADE'
+  // })
+  // triggers!: TriggerEntity[];
 
 }
