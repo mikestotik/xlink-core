@@ -11,6 +11,7 @@ export class CreateAssetDTO implements Asset {
   title!: string;
   desc?: string;
   icon?: string;
+  color?: string;
   link!: string;
   meta!: AssetMeta;
   permission!: AssetPermission;
@@ -30,6 +31,7 @@ export class AssetDTO extends BaseEntityDTO implements Asset {
   title!: string;
   desc?: string;
   icon?: string;
+  color?: string;
   link!: string;
   meta!: AssetMeta;
   permission!: AssetPermission;

@@ -14,6 +14,7 @@ export interface Asset {
   title: string;
   desc?: string;
   icon?: string;
+  color?: string;
   permission: AssetPermission;
   type: DataType;
   meta: AssetMeta;

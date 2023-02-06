@@ -18,6 +18,9 @@ export class AssetEntity extends BaseEntity implements Asset {
   @Column({ nullable: true })
   icon?: string;
 
+  @Column({ nullable: true })
+  color?: string;
+
   @Column()
   link!: string;
 
@@ -35,12 +38,5 @@ export class AssetEntity extends BaseEntity implements Asset {
 
   @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
   owner!: UserEntity;
-
-  // @ManyToMany(() => TriggerEntity, trigger => trigger.assets, {
-  //   // cascade: true,
-  //   // onDelete: 'CASCADE',
-  //   // onUpdate: 'CASCADE'
-  // })
-  // triggers!: TriggerEntity[];
 
 }
