@@ -15,6 +15,7 @@ export class CreateStepDTO {
   delay?: Date;
   timer?: Date;
   loop?: boolean;
+  disabled?: boolean;
 
   @Transform(({ value }) => ({ id: value }))
   recipe!: RecipeDTO;
@@ -22,7 +23,7 @@ export class CreateStepDTO {
 
 
 export class UpdateStepDTO extends PartialType(CreateStepDTO) {
-  disabled?: boolean;
+
 }
 
 

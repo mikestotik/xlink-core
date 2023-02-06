@@ -14,6 +14,7 @@ import { RoleModule } from './modules/core/role/role.module';
 import { RolesGuard } from './modules/core/role/roles.guard';
 import { UserModule } from './modules/core/user/user.module';
 import { EventModule } from './modules/event/event.module';
+import { ActionModule } from './modules/rule-engine/action/action.module';
 import { RecipeModule } from './modules/rule-engine/recipe/recipe.module';
 import { RuleModule } from './modules/rule-engine/rule/rule.module';
 import { StepModule } from './modules/rule-engine/step/step.module';
@@ -44,7 +45,8 @@ import { WidgetModule } from './modules/widget/widget.module';
     RecipeModule,
     StepModule,
     RuleModule,
-    TriggerModule
+    TriggerModule,
+    ActionModule
   ],
   providers: [
     {
