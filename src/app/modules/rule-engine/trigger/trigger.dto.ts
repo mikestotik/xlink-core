@@ -1,9 +1,8 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { plainToInstance, Transform } from 'class-transformer';
+import { Transform } from 'class-transformer';
 import { BaseEntityDTO, SchemaEntityDTO } from '../../../database/entity.class';
 import { Trigger, TriggerCondition } from '../../../interfaces/trigger.interface';
 import { AssetDTO } from '../../asset-manager/asset/asset.dto';
-import { UserDTO } from '../../core/user/user.dto';
 import { RuleDTO } from '../rule/rule.dto';
 
 
@@ -43,9 +42,6 @@ export class TriggerDTO extends BaseEntityDTO implements Trigger {
   @Transform(({ value }) => value.id)
   rule!: RuleDTO;
 
-  @Transform(({ value }) => value.id)
-  owner!: UserDTO;
-
-  @Transform(({ value }) => value.map(assetEntity => plainToInstance(AssetDTO, assetEntity)))
+  @Transform(({ value }) => value.map(entity => entity.id))
   assets!: AssetDTO[];
 }
