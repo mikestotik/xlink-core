@@ -19,6 +19,6 @@ export class DeviceEntity extends BaseEntity implements Device {
   @Column({ nullable: true })
   public icon?: string;
 
-  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
+  @ManyToOne(() => UserEntity, { onDelete: 'CASCADE' })
   public owner?: UserEntity;
 }

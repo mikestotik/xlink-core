@@ -36,7 +36,7 @@ export class AssetEntity extends BaseEntity implements Asset {
   @ManyToOne(() => DeviceEntity, { eager: true, onDelete: 'CASCADE' })
   device!: DeviceEntity;
 
-  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
+  @ManyToOne(() => UserEntity, { onDelete: 'CASCADE' })
   owner!: UserEntity;
 
 }

@@ -20,6 +20,6 @@ export class RuleEntity extends BaseEntity implements Rule {
   @ManyToOne(() => StepEntity, { eager: true })
   step!: StepEntity;
 
-  @ManyToOne(() => UserEntity, { eager: true })
+  @ManyToOne(() => UserEntity)
   owner!: UserEntity;
 }

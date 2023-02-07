@@ -13,7 +13,7 @@ export class RecipeEntity extends BaseEntity implements Recipe {
   @Column({ nullable: true })
   desc?: string;
 
-  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
+  @ManyToOne(() => UserEntity, { onDelete: 'CASCADE' })
   owner!: UserEntity;
 
 }

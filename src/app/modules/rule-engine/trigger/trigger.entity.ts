@@ -56,7 +56,7 @@ export class TriggerEntity extends BaseEntity implements Trigger {
   })
   assets?: AssetEntity[];
 
-  @ManyToOne(() => UserEntity, { eager: true })
+  @ManyToOne(() => UserEntity)
   owner!: UserEntity;
 
 

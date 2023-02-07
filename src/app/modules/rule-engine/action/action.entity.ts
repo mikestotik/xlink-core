@@ -27,6 +27,6 @@ export class ActionEntity extends BaseEntity implements Action {
   @ManyToOne(() => RuleEntity, { eager: true, onDelete: 'CASCADE' })
   rule!: RuleEntity;
 
-  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
+  @ManyToOne(() => UserEntity, { onDelete: 'CASCADE' })
   owner!: UserEntity;
 }

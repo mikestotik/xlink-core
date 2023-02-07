@@ -39,6 +39,6 @@ export class StepEntity extends BaseEntity implements Step {
   @ManyToOne(() => RecipeEntity, { eager: true, onDelete: 'CASCADE' })
   recipe!: RecipeEntity;
 
-  @ManyToOne(() => UserEntity, { eager: true, onDelete: 'CASCADE' })
+  @ManyToOne(() => UserEntity, { onDelete: 'CASCADE' })
   owner!: UserEntity;
 }
